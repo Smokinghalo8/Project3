@@ -6,6 +6,8 @@ const AddIngredientPage: React.FC = () => {
 
   const handleAddIngredient = async () => {
     try {
+
+        //lets try this once more...
       const response = await fetch('http://localhost:3001/add-ingredient', {
         method: 'POST',
         headers: {
@@ -17,13 +19,18 @@ const AddIngredientPage: React.FC = () => {
 
 
 
-      if (response.ok) {
-        setMessage('Ingredient added successfully');
+      if (response.ok) {//validate it
+
+        setMessage('Ingredient added successfully, yay!');
         setIngredient('');
+
+
       } else {
         setMessage('Error adding ingredient, please contact ya boy Ethan');
       }
-    } catch (error) {
+
+
+    } catch (error) {//error
       setMessage('Error adding ingredient, please contact ya boy Ethan');
     }
   };
